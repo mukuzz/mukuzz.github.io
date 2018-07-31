@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wavy Strings</title>
+	<style type="text/css">
+		body { background: #ffeb3c; margin: 0 }
+		canvas { opacity: 0.1 }
+	</style>
+	<script type="text/javascript" src="./Bicolor - Creative Coming Soon Template_files/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<canvas id="canvas" ></canvas>
+	<script type="text/javascript">
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+
+		var curve_array = [];
+		var curve = function(x1, y1, x2, y2,
+				x1dx, y1dy, x2dx, y2dy){
+			this.x1 = x1;
+			this.y1 = y1;
+			this.x2 = x2;
+			this.y2 = y2;
+
+			this.x1dx = x1dx;
+			this.y1dy = y1dy;
+			this.x2dx = x2dx;
+			this.y2dy = y2dy;
+		};
+
+		function canvasResize(){
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+		}
+
+		function canvasInit(){
+			for (var i = 0; i < 64; i++) {
+				var x1 = canvas.width * Math.random();
+				var y1 = canvas.height * Math.random();
+				var x2 = canvas.width * Math.random();
+				var y2 = canvas.height * Math.random();
+
+				var x1dx = (Math.random() * 2 - 1)/4;
+				var y1dy = (Math.random() * 2 - 1)/4;
+				var x2dx = (Math.random() * 2 - 1)/4;
+				var y2dy = (Math.random() * 2 - 1)/4;
+
+				curve_array.push(new curve(
+					x1, y1, x2, y2,
+					x1dx, y1dy, x2dx, y2dy
+				));
+			}
+		}
+
+		function canvasDraw(){
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			ctx.lineWidth = 1;
+
+			for (var i = 0; i < curve_array.length ; i++) {
+				var curr_curve = curve_array[i];
+				ctx.beginPath();
+				ctx.moveTo(-100, canvas.height + 100);
+				ctx.bezierCurveTo(
+					curr_curve.x1, curr_curve.y1,
+					curr_curve.x2, curr_curve.y2,
+					canvas.width + 100, - 100
+				);
+
+				ctx.stroke();
+
+				if (curr_curve.x1 < 0 || curr_curve.x1 > canvas.width){
+					curr_curve.x1 -= curr_curve.x1dx;
+					curr_curve.x1dx *= -1;
+				}
+				if (curr_curve.y1 < 0 || curr_curve.y1 > canvas.height){
+					curr_curve.y1 -= curr_curve.y1dy;
+					curr_curve.y1dy *= -1;
+				}
+				if (curr_curve.x2 < 0 || curr_curve.x2 > canvas.width){
+					curr_curve.x2 -= curr_curve.x2dx;
+					curr_curve.x2dx *= -1;
+				}
+				if (curr_curve.y2 < 0 || curr_curve.y2 > canvas.height){
+					curr_curve.y2 -= curr_curve.y2dy;
+					curr_curve.y2dy *= -1;
+				}
+
+				curr_curve.x1 += curr_curve.x1dx;
+				curr_curve.y1 += curr_curve.y1dy;
+				curr_curve.x2 += curr_curve.x2dx;
+				curr_curve.y2 += curr_curve.y2dy;
+
+				curve_array[i] = curr_curve;
+			}
+			window.requestAnimationFrame(canvasDraw);
+		}
+
+		function myCanvas(){
+			canvasResize();
+			canvasInit();
+			canvasDraw();
+		}
+
+		function setScrollBehaviour(){
+
+		}
+
+		$(document).on('ready', function(){
+
+			setScrollBehaviour();
+			myCanvas();
+			$(window).resize(function () {
+				canvasResize();
+			});
+
+		});
+
+	</script>
+</body>
+</html>
