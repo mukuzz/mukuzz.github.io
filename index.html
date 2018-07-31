@@ -4,7 +4,7 @@
 	<title>Wavy Strings</title>
 	<style type="text/css">
 		body { background: #ffeb3c; margin: 0 }
-		canvas { opacity: 0.1 }
+		canvas { opacity: 0.1; margin: 0; position: fixed }
 	</style>
 	<script type="text/javascript" src="./jquery-1.11.3.js"></script>
 </head>
@@ -112,6 +112,8 @@
 			myCanvas();
 			$(window).resize(function () {
 				canvasResize();
+				curve_array = [];
+				canvasInit();
 			});
 
 		});
