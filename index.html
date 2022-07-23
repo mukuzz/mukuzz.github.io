@@ -17,18 +17,43 @@
  			margin: 0; position: fixed; width: 100%; height: 100%;
  			top: 0; left: 0; z-index: -1;
  		}
-		div {
+		div#background {
 			position: fixed;
 			background-color: #fff;
 			top: 0; left: 0; width: 100%; height: 100%;
 			z-index: -2;
+		}
+		div#projects-container {
+			background-color: transparent;
 		}
 
 		article {
 			padding: 10vmin 5vmin 0;
 		}
 
-		h1,
+		article #projects-container {
+			margin-top: 4rem;
+		}
+
+		article #projects-container #projects {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: start;
+			row-gap: 3rem;
+			column-gap: 1rem;
+			margin-top: 2rem;
+		}
+
+		article #projects-container #projects .project {
+			max-width: 360px;
+		}
+
+		article #projects-container h2 {
+			font-size: 3rem;
+			font-family: ui-monospace;
+		}
+
+		h1, h2, h3,
 		h6,
 		p,
 		a,
@@ -83,13 +108,11 @@
 				background-color: #1a1a1a;
 			}
 
-			div {
+			div#background {
 				background-color: #1a1a1a;
 			}
 
-			h1,
-			p,
-			a {
+			h1, h2, h3, h4, h5, p, a {
 				color: #e4e4e4;
 			}
 
@@ -247,7 +270,7 @@
  			});
  		})();
  	</script>
-	<div></div>
+	<div id="background"></div>
 	<article>
 		<h1 class="name">
 			<svg>
@@ -268,6 +291,28 @@
 			</svg>
 		</a><br>
 		<a id="email_addr" href="mailto:mukulsingh1248@gmail.com" title="email">mukulsingh1248@gmail.com</a>
+		<div id="projects-container">
+			<div><h2>PROJECTS</h2></div>
+			<div id="projects">
+				<div class="project">
+					<h3>Uazo | Factory Floor QA Application</h3><br>
+					<p>A full stack solution to track quality of manufactured products in textile factory</p><br>
+					<u><a href="https://github.com/mukuzz/uazo_backend" target="_blank">Backend Code</a></u>
+					<u><a href="https://github.com/mukuzz/uazo_dashboard" target="_blank">Dashboard Code</a></u>
+				</div>
+				<div class="project">
+					<h3>College Notice Bot</h3><br>
+					<p>Django Bot for telegram which scraps the college website every 10 mins and sends any new notices to a telegram channel</p><br>
+					<u><a href="https://github.com/mukuzz/dsc_notice_bot" target="_blank">Code</a></u>
+					<u><a href="https://t.me/dyalsinghcollege" target="_blank">Telegram Channel</a></u>
+				</div>
+				<div class="project">
+					<h3>Chess Replay</h3><br>
+					<p>A portal to upload and replay chess games as they had been playedl</p><br>
+					<u><a href="https://github.com/mukuzz/chess_db" target="_blank">Code</a></u>
+				</div>
+			</div>
+		</div>
 	</article>
 </body>
 
