@@ -49,6 +49,11 @@
 			flex-basis: 320px;
 		}
 
+		article #projects-container #projects .project a,
+		article #projects-container #projects .project span {
+			font-family: monospace;
+		}
+
 		article #projects-container h2 {
 			font-size: 3rem;
 			font-family: ui-monospace;
@@ -140,6 +145,11 @@
 			<symbol id="icon-github" viewBox="0 0 32 32">
 				<path
 					d="M16 0.395c-8.836 0-16 7.163-16 16 0 7.069 4.585 13.067 10.942 15.182 0.8 0.148 1.094-0.347 1.094-0.77 0-0.381-0.015-1.642-0.022-2.979-4.452 0.968-5.391-1.888-5.391-1.888-0.728-1.849-1.776-2.341-1.776-2.341-1.452-0.993 0.11-0.973 0.11-0.973 1.606 0.113 2.452 1.649 2.452 1.649 1.427 2.446 3.743 1.739 4.656 1.33 0.143-1.034 0.558-1.74 1.016-2.14-3.554-0.404-7.29-1.777-7.29-7.907 0-1.747 0.625-3.174 1.649-4.295-0.166-0.403-0.714-2.030 0.155-4.234 0 0 1.344-0.43 4.401 1.64 1.276-0.355 2.645-0.532 4.005-0.539 1.359 0.006 2.729 0.184 4.008 0.539 3.054-2.070 4.395-1.64 4.395-1.64 0.871 2.204 0.323 3.831 0.157 4.234 1.026 1.12 1.647 2.548 1.647 4.295 0 6.145-3.743 7.498-7.306 7.895 0.574 0.497 1.085 1.47 1.085 2.963 0 2.141-0.019 3.864-0.019 4.391 0 0.426 0.288 0.925 1.099 0.768 6.354-2.118 10.933-8.113 10.933-15.18 0-8.837-7.164-16-16-16z">
+				</path>
+			</symbol>
+			<symbol id="icon-linkedin" viewBox="0 0 50 50">
+				<path
+					d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z">
 				</path>
 			</symbol>
 			<symbol id="f-name" viewBox="421.013 5.508 128.122 30.419">
@@ -281,14 +291,19 @@
 				<use xlink:href="#l-name"></use>
 			</svg>
 		</h1><br><br>
-		<a class="icon-link" href="https://github.com/mukuzz" title="github">
+		<a class="icon-link" href="https://github.com/mukuzz" title="github" target="_blank">
 			<svg viewBox="0 0 24 24" width="24" height="24">
 				<use xlink:href="#icon-github"></use>
 			</svg>
 		</a>
-		<a class="icon-link" href="https://twitter.com/mukuz_" title="twitter" style="margin-left: 12px;">
+		<a class="icon-link" href="https://twitter.com/mukuz_" title="twitter" style="margin-left: 12px;" target="_blank">
 			<svg viewBox="0 0 24 24" width="24" height="24">
 				<use xlink:href="#icon-twitter"></use>
+			</svg>
+		</a>
+		<a class="icon-link" href="https://www.linkedin.com/in/mukul124/" title="linkedin" style="margin-left: 12px;" target="_blank">
+			<svg viewBox="0 0 24 24" width="24" height="24">
+				<use xlink:href="#icon-linkedin"></use>
 			</svg>
 		</a><br>
 		<a id="email_addr" href="mailto:mukulsingh1248@gmail.com" title="email">mukulsingh1248@gmail.com</a>
@@ -296,31 +311,51 @@
 			<div><h2>PROJECTS</h2></div>
 			<div id="projects">
 				<div class="project">
-					<h3>Uazo | Factory Floor QA Application</h3><br>
-					<p>A full stack solution to track quality of manufactured products in textile factory</p><br>
-					<u><a href="https://github.com/mukuzz/uazo_backend" target="_blank">Backend Code</a></u>
-					<u><a href="https://github.com/mukuzz/uazo_dashboard" target="_blank">Dashboard Code</a></u>
+					<h3>Cars Showcase</h3><br>
+					<p>A Demo Website built with Next.js. The website allows for quick searching of cars based on their make and model and provides the user with the details of the car.</p><br>
+					<span style="font-family: monospace;">Tech Stack: Next.js | tailwind</span><br/>
+					<u><a href="https://cars.mukulsingh.in" target="_blank">Demo</a></u>
+					— 
+					<u><a href="https://github.com/mukuzz/uazo_dashboard" target="_blank">Source Code</a></u>
+				</div>
+				<div class="project">
+					<h3>Quality Assurance Dashboard</h3><br>
+					<p>Part of a whole solution to track quality of manufactured products in textile factory. It consists of a dashboard built in React.js to fetch data from backend APIs and display various reports.</p><br>
+					<span style="font-family: monospace;">Tech Stack: React.js</span><br/>
+					<u><a href="https://uazo.mukulsingh.in" target="_blank">Demo</a></u> — 
+					<u><a href="https://github.com/mukuzz/uazo_dashboard" target="_blank">Source Code</a></u>
 				</div>
 				<div class="project">
 					<h3>College Notice Bot</h3><br>
 					<p>Django Bot for telegram which scraps the college website every 10 mins and sends any new notices to a telegram channel</p><br>
-					<u><a href="https://github.com/mukuzz/dsc_notice_bot" target="_blank">Code</a></u>
+					<span style="font-family: monospace;">Tech Stack: Django</span><br/>
+					<u><a href="https://github.com/mukuzz/dsc_notice_bot" target="_blank">Source Code</a></u> — 
 					<u><a href="https://t.me/dyalsinghcollege" target="_blank">Telegram Channel</a></u>
+				</div>
+				<div class="project">
+					<h3>Uazo | Factory Floor QA Application</h3><br>
+					<p>A full stack solution to track quality of manufactured products in textile factory</p><br>
+					<span style="font-family: monospace;">Tech Stack: React.js | Django | Flutter</span><br/>
+					<u><a href="https://github.com/mukuzz/uazo_backend" target="_blank">Backend Code</a></u>
+					<u><a href="https://github.com/mukuzz/uazo_dashboard" target="_blank">Dashboard Code</a></u>
 				</div>
 				<div class="project">
 					<h3>Norae - Discord Music Bot</h3><br>
 					<p>A Discord bot to stream music from youtube to discord channels</p><br>
-					<u><a href="https://github.com/mukuzz/norae" target="_blank">Code</a></u>
+					<span style="font-family: monospace;">Tech Stack: Django</span><br/>
+					<u><a href="https://github.com/mukuzz/norae" target="_blank">Source Code</a></u>
 				</div>
 				<div class="project">
 					<h3>Chess Replay</h3><br>
 					<p>A portal to upload and replay chess games as they had been playedl</p><br>
-					<u><a href="https://github.com/mukuzz/chess_db" target="_blank">Code</a></u>
+					<span style="font-family: monospace;">Tech Stack: Php</span><br/>
+					<u><a href="https://github.com/mukuzz/chess_db" target="_blank">Source Code</a></u>
 				</div>
 				<div class="project">
 					<h3>Thought Board DUCS</h3><br>
 					<p>Open Chat Flutter Application for intradepartmental communications for Department of Computer Science, University of Delhi</p><br>
-					<u><a href="https://github.com/mukuzz/ThoughtBoard-DUCS" target="_blank">Code</a></u>
+					<span style="font-family: monospace;">Tech Stack: Flutter</span><br/>
+					<u><a href="https://github.com/mukuzz/ThoughtBoard-DUCS" target="_blank">Source Code</a></u>
 				</div>
 			</div>
 		</div>
